@@ -1262,8 +1262,8 @@ mod test {
         let left = "?CheckContextOr@?A0x24773155@@YA_NPBVDataArray@@@Z";
         let right = "?CheckContextOr@?A0xddf6240c@@YA_NPBVDataArray@@@Z";
         assert_eq!(
-            get_normalized_symbol_name(left, &Demangler::Codewarrior.demangle(left)),
-            get_normalized_symbol_name(right, &Demangler::Codewarrior.demangle(right))
+            get_normalized_symbol_name(left, &Demangler::Msvc.demangle(left)),
+            get_normalized_symbol_name(right, &Demangler::Msvc.demangle(right))
         );
     }
 

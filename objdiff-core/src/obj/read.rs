@@ -1232,38 +1232,38 @@ mod test {
         let left = "eff_scale$24884";
         let right = "eff_scale$21920";
         assert_eq!(
-            get_normalized_symbol_name(&left, &Demangler::Codewarrior.demangle(left)),
-            get_normalized_symbol_name(&right, &Demangler::Codewarrior.demangle(right))
+            get_normalized_symbol_name(left, &Demangler::Codewarrior.demangle(left)),
+            get_normalized_symbol_name(right, &Demangler::Codewarrior.demangle(right))
         );
 
         // Metrowerks anonymous class. Uses @class prefix, unique ID, then filename suffix.
         let left = "__dt__Q29dCamera_c23@class$3665d_camera_cppFv";
         let right = "__dt__Q29dCamera_c23@class$1727d_camera_cppFv";
         assert_eq!(
-            get_normalized_symbol_name(&left, &Demangler::Codewarrior.demangle(left)),
-            get_normalized_symbol_name(&right, &Demangler::Codewarrior.demangle(right))
+            get_normalized_symbol_name(left, &Demangler::Codewarrior.demangle(left)),
+            get_normalized_symbol_name(right, &Demangler::Codewarrior.demangle(right))
         );
         // Metrowerks class defined in function body. Uses class name prefix, unique ID, then filename suffix.
         let left = "makeDL__Q219TMBindShadowManager26TSetup1$2172ShadowUtil_cppFv";
         let right = "makeDL__Q219TMBindShadowManager25TSetup1$874ShadowUtil_cppFv";
         assert_eq!(
-            get_normalized_symbol_name(&left, &Demangler::Codewarrior.demangle(left)),
-            get_normalized_symbol_name(&right, &Demangler::Codewarrior.demangle(right))
+            get_normalized_symbol_name(left, &Demangler::Codewarrior.demangle(left)),
+            get_normalized_symbol_name(right, &Demangler::Codewarrior.demangle(right))
         );
         // Metrowerks class defined in function body, but the unique ID appears again within the function parameters.
         let left = "__as__Q210daB_ZANT_c31dZantSph_c$132966d_a_b_zant_cppFRCQ210daB_ZANT_c31dZantSph_c$132966d_a_b_zant_cpp";
         let right = "__as__Q210daB_ZANT_c30dZantSph_c$55068d_a_b_zant_cppFRCQ210daB_ZANT_c30dZantSph_c$55068d_a_b_zant_cpp";
         assert_eq!(
-            get_normalized_symbol_name(&left, &Demangler::Codewarrior.demangle(left)),
-            get_normalized_symbol_name(&right, &Demangler::Codewarrior.demangle(right))
+            get_normalized_symbol_name(left, &Demangler::Codewarrior.demangle(left)),
+            get_normalized_symbol_name(right, &Demangler::Codewarrior.demangle(right))
         );
 
         // MSVC anonymous class.
         let left = "?CheckContextOr@?A0x24773155@@YA_NPBVDataArray@@@Z";
         let right = "?CheckContextOr@?A0xddf6240c@@YA_NPBVDataArray@@@Z";
         assert_eq!(
-            get_normalized_symbol_name(&left, &Demangler::Codewarrior.demangle(left)),
-            get_normalized_symbol_name(&right, &Demangler::Codewarrior.demangle(right))
+            get_normalized_symbol_name(left, &Demangler::Codewarrior.demangle(left)),
+            get_normalized_symbol_name(right, &Demangler::Codewarrior.demangle(right))
         );
     }
 
